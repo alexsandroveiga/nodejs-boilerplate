@@ -4,17 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node -r dotenv/config dist/main",
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc -p tsconfig-build.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "module-alias": "^2.2.2",
+    "rimraf": "^3.0.2"
+  },
   "devDependencies": {
+    "@types/module-alias": "^2.0.1",
+    "@types/node": "^16.6.1",
     "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
     "eslint-config-standard-with-typescript": "^20.0.0",
     "eslint-plugin-import": "^2.24.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.3.1"
+    "eslint-plugin-promise": "^4.3.1",
+    "typescript": "^4.3.5"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
